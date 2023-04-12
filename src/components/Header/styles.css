@@ -1,0 +1,91 @@
+.header {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  display: block;
+  margin: 30px 0px;
+  font-size: 30px;
+}
+
+.menu-time {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 300px;
+  height: 80px;
+  background-color: #f1f1f1;
+  border: 2px solid #677381;
+  border-radius: 4px;
+  color: #5E6B79;
+  font-weight: 700;
+}
+
+.time-game {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  text-align: center;
+}
+
+.time-game span {
+  font-size: 18px;
+  font-weight: 500;
+  color: #5E6B79;
+}
+
+.area-button {
+  flex: 1;
+  outline: 0;
+  border: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-color: #48525D;
+  border-left: 2px solid #677381;
+  border-right: 2px solid #677381;
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
+.menu-score {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.menu-score span {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.divider {
+  width: 100%;
+  height: 2px;
+  background-color: #677381;
+}
+
+.high {
+  display: flex;
+  align-items: center;
+  font-size: 10px;
+  line-height: 12px;
+  gap: 15px;
+}
+
+.current {
+  display: flex;
+  align-items: center;
+  font-size: 10px;
+  gap: 15px;
+}

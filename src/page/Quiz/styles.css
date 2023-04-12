@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.box-option {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+  border: 1px solid #677381;
+  border-radius: 2px;
+}
+
+.time-color {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 10px 0;
+  font-size: 18px;
+  font-weight: 500;
+  color: #677381;
+}
+
+.time-color span {
+  font-size: 24px;
+}

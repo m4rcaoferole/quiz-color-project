@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:focus {
+  outline: none;
+}
+
+body {
+  color: #0f1419;
+  -webkit-font-smoothing: antialiased;
+}
+
+body, input, textarea, button {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+}
+
+.layout-container {
+  overflow: hidden;
+  height: 100vh;
+}
+
+.layout {
+  display: flex;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.latest-game {
+  background-color: #f1f1f1;
+  width: 200px;
+  overflow: auto;
+}
+
+.content {
+  flex: 1;
+  height: 100vh;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 10px 30px;
+  justify-content: end;
+}
+
+footer button {
+  border: 0;
+  outline: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #5E6B79;
+  background-color: transparent;
+}

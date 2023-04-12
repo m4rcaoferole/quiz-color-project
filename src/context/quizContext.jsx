@@ -12,16 +12,16 @@ export function QuizContextProvider({ children }) {
 
   const [color, setColor] = useState('');
   const [options, setOptions] = useState([]);
-  const [colorsAnswered, setColorsAnswered] = useState([])
+  const [colorsAnswered, setColorsAnswered] = useState([]);
 
   useEffect(() => {
     if (game === 'RUNNING') {
       if (timeStamp === 0) {
         setGame('START');
         setTimeColor(0);
-        setScore(0)
-        setColor('')
-        setOptions([])
+        setScore(0);
+        setColor('');
+        setOptions([]);
       }
 
       if (timeColor === 0) {
@@ -29,7 +29,9 @@ export function QuizContextProvider({ children }) {
         generateRandomColor();
       }
 
-      const interval = timeColor > 0 && setInterval(() => {
+      const interval =
+        timeColor > 0 &&
+        setInterval(() => {
           setTimeColor(timeColor - 1);
           setTimeStamp(timeStamp - 1);
         }, 1000);
@@ -46,17 +48,19 @@ export function QuizContextProvider({ children }) {
   }, [score, maxScore]);
 
   const generateRandomColor = () => {
-    const currentColor = ` #${Math.floor(Math.random() * 16777215).toString(16).toLocaleUpperCase()}`;
+    const currentColor = ` #${Math.floor(Math.random() * 16777215)
+      .toString(16)
+      .toLocaleUpperCase()}`;
     const correctOption = currentColor;
 
-    const incorrectOption1 = ` #${Math.floor(Math.random() * 16777215).toString(16).toLocaleUpperCase()}`;
-    const incorrectOption2 = ` #${Math.floor(Math.random() * 16777215).toString(16).toLocaleUpperCase()}`;
+    const incorrectOption1 = ` #${Math.floor(Math.random() * 16777215)
+      .toString(16)
+      .toLocaleUpperCase()}`;
+    const incorrectOption2 = ` #${Math.floor(Math.random() * 16777215)
+      .toString(16)
+      .toLocaleUpperCase()}`;
 
-    const options = shuffleArray([
-      correctOption,
-      incorrectOption1,
-      incorrectOption2,
-    ]);
+    const options = shuffleArray([correctOption, incorrectOption1, incorrectOption2]);
 
     setColor(currentColor);
     setOptions(options);
@@ -74,13 +78,19 @@ export function QuizContextProvider({ children }) {
     return shuffledArray;
   };
 
-  const handleAnswer = (colorCurrent) => {
-    if (colorCurrent === color) {
+  const handleAnswer = (alternativeColor) => {
+    if (alternativeColor === color) {
       setScore((prevScore) => prevScore + 5);
-      setColorsAnswered([...colorsAnswered, { color: color, isCorrect: true, time: 10 - timeColor }]);
+      setColorsAnswered([
+        ...colorsAnswered,
+        { color: color, isCorrect: true, time: 10 - timeColor },
+      ]);
     } else {
       setScore((prevScore) => prevScore - 1);
-      setColorsAnswered([...colorsAnswered, { color: colorCurrent, isCorrect: false, time: 10 - timeColor }]);
+      setColorsAnswered([
+        ...colorsAnswered,
+        { colorFalse: alternativeColor, color: color, isCorrect: false, time: 10 - timeColor },
+      ]);
     }
 
     generateRandomColor();
@@ -93,32 +103,31 @@ export function QuizContextProvider({ children }) {
   };
 
   const handleRestartGame = () => {
-    const restart = confirm(`Do you want to start over?`)
-    
+    const restart = confirm(`Do you want to start over?`);
+
     if (restart === true) {
       setGame(`RUNNING`);
       setTimeStamp(30);
       generateRandomColor();
       setScore(0);
-      setColorsAnswered([])
+      setColorsAnswered([]);
     }
   };
 
   const handleResetDataGame = () => {
-    const restart = confirm(`Resetting will erase all game data!`)
-    
+    const restart = confirm(`Resetting will erase all game data!`);
+
     if (restart === true) {
       localStorage.clear();
       setGame(`START`);
       setTimeStamp(30);
-      setOptions([])
+      setOptions([]);
       setColor('');
       setScore(0);
-      setMaxScore(0)
-      setColorsAnswered([])
+      setMaxScore(0);
+      setColorsAnswered([]);
     }
   };
-
 
   return (
     <QuizContext.Provider

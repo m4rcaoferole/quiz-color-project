@@ -40,7 +40,7 @@ a {
 
 .latest-game {
   background-color: #f1f1f1;
-  width: 200px;
+  width: 250px;
   overflow: auto;
 }
 
@@ -64,4 +64,34 @@ footer button {
   font-weight: 600;
   color: #5E6B79;
   background-color: transparent;
+}
+
+h2 {
+  font-size: 18px;
+  text-align: center;
+  color: #48525D;
+  padding: 8px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th {
+  padding: 12px;
+  font-size: 10px;
+  color: #48525D;
+  text-align: left;
+  border: 2px solid #DBDFE6;
+}
+
+table th:first-child {
+  border-left: 2px;
+  padding-left: 16px;
+}
+
+table th:last-child {
+  border-right: 2px;
+  padding-right: 16px;
 }

@@ -13,12 +13,23 @@ function App() {
     <div className="layout-container">
       <div className="layout">
         <div className="latest-game">
-          {colorsAnswered.map((color) => (
+          <h2>Current/Latest Game</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Guessed color</th>
+                <th>Correct color</th>
+                <th>Score</th>
+              </tr>
+            </thead>
+          </table>
+          {colorsAnswered.map((answered) => (
             <History
-              key={color.color}
-              colorsAnswer={color.color}
-              isCorrect={color.isCorrect ? `✅` : `❌`}
-              time={color.time}
+              key={answered.color}
+              colorsAnswer={answered.color}
+              colorFalse={answered.colorFalse}
+              isCorrect={answered.isCorrect ? `✅` : `❌`}
+              time={answered.time}
             />
           )).reverse()}
         </div>

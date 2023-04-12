@@ -1,5 +1,19 @@
 .history-container {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+}
+
+.color-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.time-answer {
+  margin: 8px;
+}
+
+.time {
+  font-size: 14px;
+  font-weight: 500;
 }

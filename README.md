@@ -5,6 +5,12 @@
 A aplicação Quiz Color que foi implementada, que visa praticar a invejável habilidade daqueles que conseguem visualizar uma cor,
 apenas olhando para seu hexadecimal. Sim essas pessoas existem, acredite.
 
+## 🎨 Layout
+
+<p align="center">
+    <img alt="layout do projeto" title="layout do projeto" src="./.github/quizColorGame.png" />
+</p>
+
 ---
 
 ## Como o jogo funciona?
